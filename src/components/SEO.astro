@@ -13,7 +13,7 @@ const {
   title,
   description = SITE.description,
   canonical,
-  ogImage = "/og/og-default.png",
+  ogImage = "/og/uxoinfo-og.jpg",
   noIndex = false
 } = Astro.props;
 
@@ -33,7 +33,7 @@ const ogImg = ogImage.startsWith("http") ? ogImage : (site ? `${site}${ogImage}`
 <title>{finalTitle}</title>
 <meta name="description" content={description} />
 
-<link rel="canonical" href={finalCanonical} />
+<link rel="icon" href=uxo-favicon.png />
 
 {noIndex ? <meta name="robots" content="noindex,nofollow" /> : null}
 
