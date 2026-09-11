@@ -3,16 +3,11 @@ import { t } from "@/i18n/ui";
 
 const locale = Astro.currentLocale;
 ---
-<header class="container" role="banner" aria-label="Site header" style="padding: 1.25rem 0;">
-  <nav aria-label="Primary" class="card p-16" style="display:flex; gap:1rem; align-items:center; justify-content:space-between;">
-    <a href="/" style="font-weight:800; letter-spacing:-0.02em; text-decoration:none;">
-      UXO Info
-      <span aria-hidden="true" style="color:var(--color-text);">■</span>
-    </a>
-
-    <div style="display:flex; gap:0.85rem; flex-wrap:wrap; justify-content:flex-end;">
-      <a href="/about">{t(locale, "nav_about")}</a>
-      <a href="/contact">{t(locale, "nav_contact")}</a>
+<header class="site-header" role="banner">
+  <nav class="container primary-nav" aria-label="Primary">
+    <a href="/" class="wordmark" aria-label="UXO.INFO home">UXO<span>.INFO</span></a>
+    <div class="nav-links">
+      <a href="/what-is-uxo">What is UXO?</a><a href="/impacts">Impacts</a><a href="/clearance">Clearance</a><a href="/resources">Resources</a><a href="/updates">Updates</a><a href="/about">About</a><a href="/contact">{t(locale, "nav_contact")}</a>
     </div>
   </nav>
 </header>

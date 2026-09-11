@@ -1,24 +1,8 @@
 ---
-import BaseLayout from "@/layouts/BaseLayout.astro";
-import { t } from "@/i18n/ui";
-const locale = Astro.currentLocale;
+import BaseLayout from "../layouts/BaseLayout.astro";
 ---
-<BaseLayout title={t(locale, "contact_title")} description="Contact WhyTrashEarth.">
-<section class="card p-24" aria-labelledby="contact-title">
-  <h1 id="contact-title" class="h1">Contact Us</h1>
-
-  <p class="muted" style="max-width: 75ch; line-height: 1.65;">
-    We prefer direct communication. If you have a question, idea, or would like to work with us, please reach out via email.
-  </p>
-
-  <p style="margin-top: 16px; font-weight: 700;">
-    <a href="mailto:wte23@pm.me" style="text-decoration: underline;">
-      wte23@pm.me
-    </a>
-  </p>
-
-  <p class="muted" style="margin-top: 16px; max-width: 75ch; line-height: 1.65;">
-    If needed, a contact form may be available in the future. For now, email ensures your message reaches us directly and reliably.
-  </p>
-</section>
+<BaseLayout title="Contact & collaboration | UXO.INFO" description="Contact UXO.INFO for sources, corrections, collaboration, and educational use.">
+  <section class="page-hero"><div class="container"><p class="eyebrow">Contact UXO.INFO</p><h1>Research. Education. Collaboration. Field knowledge.</h1><p class="lead">We welcome contact from researchers, clearance organizations, governments, educators, journalists, environmental organizations, affected communities, artists, photographers, translators, and people with knowledge that may improve this resource.</p><p><a class="action-link" href="mailto:wte23@pm.me">wte23@pm.me</a></p></div></section>
+  <section class="section"><div class="container split"><div><h2>Ways to contribute.</h2></div><ol class="numbered"><li><span>01</span><div><h3>Share information or corrections</h3><p>Reports, datasets, historical records, photographs, video, source material, or a correction to something we have published.</p></div></li><li><span>02</span><div><h3>Collaborate</h3><p>Research, education, translation, mapping, design, awareness work, or another responsible project connection.</p></div></li><li><span>03</span><div><h3>Clearance organizations</h3><p>We especially welcome contact from organizations doing professional clearance, remediation, risk education, or related field work.</p></div></li><li><span>04</span><div><h3>Media and educational use</h3><p>Questions about UXO.INFO material, the UXO symbol, interviews, or classroom and public-interest use.</p></div></li><li><span>05</span><div><h3>General contact</h3><p>If your message does not fit a category, it is still welcome.</p></div></li></ol></div></section>
+  <section class="section section--quiet"><div class="container split"><div><p class="eyebrow">Future direction</p><h2>Clearance support, honestly stated.</h2></div><div class="copy"><p>UXO.INFO hopes to directly support or fund documented UXO clearance efforts in the future. We do not currently represent that we fund clearance work.</p><p>When that changes, it should be specific, transparent, and tied to the work being supported.</p></div></div></section>
 </BaseLayout>

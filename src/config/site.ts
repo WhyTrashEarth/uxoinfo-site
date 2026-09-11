@@ -1,9 +1,9 @@
 export type SiteStatus = "live" | "construction";
 
 export const SITE = {
-  name: "UXOInfo",
+  name: "UXO.INFO",
   description:
-    "UXOInfo is an initiative focused on practical, systems-level improvements in regards to UXOs (Unexploded Ordinances)",
+    "UXO.INFO is a public-interest information project about unexploded ordnance, its impacts, and professional clearance.",
 
   // Flip this to "construction" to force the homepage into under-construction mode:
   status: "live" as SiteStatus,
