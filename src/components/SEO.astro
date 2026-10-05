@@ -33,7 +33,10 @@ const ogImg = ogImage.startsWith("http") ? ogImage : (site ? `${site}${ogImage}`
 <title>{finalTitle}</title>
 <meta name="description" content={description} />
 
-<link rel="icon" href="/uxo-favicon.png" />
+<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+<link rel="alternate icon" href="/uxo-favicon.png" type="image/png" />
+<link rel="apple-touch-icon" href="/uxo-favicon.png" />
+<link rel="canonical" href={finalCanonical} />
 
 {noIndex ? <meta name="robots" content="noindex,nofollow" /> : null}
 
@@ -43,9 +46,12 @@ const ogImg = ogImage.startsWith("http") ? ogImage : (site ? `${site}${ogImage}`
 <meta property="og:description" content={description} />
 <meta property="og:url" content={ogUrl} />
 <meta property="og:image" content={ogImg} />
+<meta property="og:image:alt" content="UXO.INFO — source-led information about unexploded ordnance" />
+<meta property="og:site_name" content={SITE.name} />
 
 <!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content={finalTitle} />
 <meta name="twitter:description" content={description} />
 <meta name="twitter:image" content={ogImg} />
+<meta name="twitter:image:alt" content="UXO.INFO — source-led information about unexploded ordnance" />
