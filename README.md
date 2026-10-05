@@ -1,6 +1,6 @@
-# UXOInfo
+# UXO.ECO
 
-Astro starter template for UXOInfo:
+Astro site for UXO.ECO, an independent environmental and humanitarian public-awareness project about unexploded ordnance and explosive remnants of war.
 
 - i18n routing ready (default `en`, `prefixDefaultLocale: false`)
 - Atkinson Hyperlegible via local package files (no external CDN)

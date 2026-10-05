@@ -1,0 +1,17 @@
+{
+  "name": "UXO.ECO",
+  "short_name": "UXO.ECO",
+  "description": "Source-led public information on unexploded ordnance and its enduring humanitarian and environmental consequences.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#050505",
+  "theme_color": "#050505",
+  "icons": [
+    {
+      "src": "/uxo-favicon.png",
+      "sizes": "128x128",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}

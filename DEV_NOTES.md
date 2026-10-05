@@ -1,4 +1,3 @@
-### UXO.Info Dev Notes
+### UXO.ECO Dev Notes
 
 - Started Today
-

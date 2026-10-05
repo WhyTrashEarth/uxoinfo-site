@@ -13,7 +13,9 @@ const {
   title,
   description = SITE.description,
   canonical,
-  ogImage = "/og/uxoinfo-og.jpg",
+  // Replace this temporary symbol-based preview with the UXO.ECO 1200×630 artwork
+  // listed in docs/brand-asset-replacement.md before public launch.
+  ogImage = "/images/uxo-symbol-mywa-works.jpg",
   noIndex = false
 } = Astro.props;
 
@@ -36,6 +38,7 @@ const ogImg = ogImage.startsWith("http") ? ogImage : (site ? `${site}${ogImage}`
 <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
 <link rel="alternate icon" href="/uxo-favicon.png" type="image/png" />
 <link rel="apple-touch-icon" href="/uxo-favicon.png" />
+<link rel="manifest" href="/site.webmanifest" />
 <link rel="canonical" href={finalCanonical} />
 
 {noIndex ? <meta name="robots" content="noindex,nofollow" /> : null}
@@ -46,7 +49,7 @@ const ogImg = ogImage.startsWith("http") ? ogImage : (site ? `${site}${ogImage}`
 <meta property="og:description" content={description} />
 <meta property="og:url" content={ogUrl} />
 <meta property="og:image" content={ogImg} />
-<meta property="og:image:alt" content="UXO.INFO — source-led information about unexploded ordnance" />
+<meta property="og:image:alt" content="UXO.ECO — source-led information about unexploded ordnance and its enduring environmental and humanitarian consequences" />
 <meta property="og:site_name" content={SITE.name} />
 
 <!-- Twitter -->
@@ -54,4 +57,18 @@ const ogImg = ogImage.startsWith("http") ? ogImage : (site ? `${site}${ogImage}`
 <meta name="twitter:title" content={finalTitle} />
 <meta name="twitter:description" content={description} />
 <meta name="twitter:image" content={ogImg} />
-<meta name="twitter:image:alt" content="UXO.INFO — source-led information about unexploded ordnance" />
+<meta name="twitter:image:alt" content="UXO.ECO — source-led information about unexploded ordnance and its enduring environmental and humanitarian consequences" />
+
+<script type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: SITE.name,
+  url: site || SITE.canonicalBase,
+  description: SITE.description,
+  publisher: {
+    "@type": "Organization",
+    name: SITE.name,
+    url: site || SITE.canonicalBase,
+    email: SITE.contactEmail
+  }
+})} />

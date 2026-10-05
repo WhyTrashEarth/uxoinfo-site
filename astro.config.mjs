@@ -2,7 +2,7 @@ import { defineConfig } from "astro/config";
 import sitemap from "@astrojs/sitemap";
 
 export default defineConfig({
-  site: 'https://uxo.info',
+  site: 'https://uxo.eco',
   integrations: [sitemap()],
 
   // i18n routing ready:

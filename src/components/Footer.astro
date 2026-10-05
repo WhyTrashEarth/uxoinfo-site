@@ -3,7 +3,7 @@ import { SITE } from "@/config/site";
 const reviewed = new Intl.DateTimeFormat("en", { day: "numeric", month: "long", year: "numeric", timeZone: "UTC" }).format(new Date(`${SITE.lastSubstantiveReview}T00:00:00Z`));
 ---
 <footer class="site-footer" role="contentinfo" aria-label="Site footer">
-  <div class="container footer-grid"><div><a class="footer-wordmark" href="/" aria-label="UXO.INFO home">UXO<span>.INFO</span></a><p class="footer-statement">Source-led information on unexploded ordnance and its enduring consequences.</p></div><div class="footer-links"><a href="/mission">Mission &amp; end state</a><a href="/resources">Sources &amp; resources</a><a href="/updates">Updates &amp; changelog</a><a href="/symbol">Symbol guidelines</a><a href="/privacy">Privacy</a><a href="/contact">Contact</a></div></div>
-  <div class="container footer-bottom"><span>© {new Date().getFullYear()} UXO.INFO</span><span>Last substantive review: <time datetime={SITE.lastSubstantiveReview}>{reviewed}</time></span></div>
-  <a href="/" class="footer-symbol" aria-label="Return to UXO.INFO home"><img src="/images/uxo-symbol-mywa-works.jpg" alt="UXO.INFO awareness symbol" width="1536" height="1536" /></a>
+  <div class="container footer-grid"><div><a class="footer-wordmark" href="/" aria-label="UXO.ECO home">UXO<span>.ECO</span></a><p class="footer-statement">Source-led information on unexploded ordnance and its enduring humanitarian and environmental consequences.</p></div><div class="footer-links"><a href="/mission">Mission &amp; end state</a><a href="/resources">Sources &amp; resources</a><a href="/updates">Updates &amp; changelog</a><a href="/symbol">Symbol guidelines</a><a href="/privacy">Privacy</a><a href="/contact">Contact</a></div></div>
+  <div class="container footer-bottom"><span>© {new Date().getFullYear()} UXO.ECO</span><span>Last substantive review: <time datetime={SITE.lastSubstantiveReview}>{reviewed}</time></span></div>
+  <a href="/" class="footer-symbol" aria-label="Return to UXO.ECO home"><img src="/images/uxo-symbol-mywa-works.jpg" alt="UXO.ECO awareness symbol" width="1536" height="1536" /></a>
 </footer>
