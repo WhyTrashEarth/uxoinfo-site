@@ -1,9 +1,11 @@
 ---
 import { SITE } from "@/config/site";
 const reviewed = new Intl.DateTimeFormat("en", { day: "numeric", month: "long", year: "numeric", timeZone: "UTC" }).format(new Date(`${SITE.lastSubstantiveReview}T00:00:00Z`));
+const currentPath = Astro.url.pathname.replace(/\/$/, "") || "/";
+const links = [["/mission", "Mission & end state"], ["/resources", "Sources & resources"], ["/updates", "Updates & changelog"], ["/symbol", "Symbol guidelines"], ["/privacy", "Privacy"], ["/contact", "Contact"]] as const;
 ---
 <footer class="site-footer" role="contentinfo" aria-label="Site footer">
-  <div class="container footer-grid"><div><a class="footer-wordmark" href="/" aria-label="UXO.ECO home">UXO<span>.ECO</span></a><p class="footer-statement">Source-led information on unexploded ordnance and its enduring humanitarian and environmental consequences.</p></div><div class="footer-links"><a href="/mission">Mission &amp; end state</a><a href="/resources">Sources &amp; resources</a><a href="/updates">Updates &amp; changelog</a><a href="/symbol">Symbol guidelines</a><a href="/privacy">Privacy</a><a href="/contact">Contact</a></div></div>
+  <div class="container footer-grid"><div><a class="footer-wordmark" href="/" aria-label="UXO.ECO home">UXO<span>.ECO</span></a><p class="footer-statement">Source-led information on unexploded ordnance and its enduring humanitarian and environmental consequences.</p></div><div class="footer-links">{links.map(([href, label]) => <a href={href} aria-current={currentPath === href ? "page" : undefined}>{label}</a>)}</div></div>
   <div class="container footer-bottom">
     <div class="footer-meta"><span>© {new Date().getFullYear()} UXO.ECO</span><span>Last substantive review: <time datetime={SITE.lastSubstantiveReview}>{reviewed}</time></span></div>
     <a class="eco-trustmark" href="https://profiles.eco/uxo?ref=tm" rel="noopener" aria-label="View the .eco profile for uxo.eco">
@@ -12,3 +14,7 @@ const reviewed = new Intl.DateTimeFormat("en", { day: "numeric", month: "long", 
   </div>
   <a href="/" class="footer-symbol" aria-label="Return to UXO.ECO home"><img src="/images/uxo-symbol-mywa-works.jpg" alt="UXO.ECO awareness symbol" width="1536" height="1536" /></a>
 </footer>
+
+<style>
+  .footer-links a[aria-current="page"] { color:var(--signal); font-weight:700; }
+</style>
