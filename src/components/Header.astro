@@ -2,12 +2,21 @@
 import { t } from "@/i18n/ui";
 
 const locale = Astro.currentLocale;
+const currentPath = Astro.url.pathname.replace(/\/$/, "") || "/";
+const links = [
+  ["/what-is-uxo", "What is UXO?"], ["/impacts", "Impacts"], ["/clearance", "Clearance"], ["/mission", "Mission"],
+  ["/resources", "Resources"], ["/updates", "Updates"], ["/about", "About"], ["/contact", t(locale, "nav_contact")],
+] as const;
 ---
 <header class="site-header" role="banner">
   <nav class="container primary-nav" aria-label="Primary">
     <a href="/" class="wordmark" aria-label="UXO.ECO home">UXO<span>.ECO</span></a>
     <div class="nav-links">
-      <a href="/what-is-uxo">What is UXO?</a><a href="/impacts">Impacts</a><a href="/clearance">Clearance</a><a href="/mission">Mission</a><a href="/resources">Resources</a><a href="/updates">Updates</a><a href="/about">About</a><a href="/contact">{t(locale, "nav_contact")}</a>
+      {links.map(([href, label]) => <a href={href} aria-current={currentPath === href ? "page" : undefined}>{label}</a>)}
     </div>
   </nav>
 </header>
+
+<style>
+  .nav-links a[aria-current="page"] { color:var(--signal); font-weight:700; }
+</style>
